@@ -1,10 +1,9 @@
-# virtual-node.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: aci-helloworld
 spec:
-  replicas: 10
+  replicas: 1
   selector:
     matchLabels:
       app: aci-helloworld
@@ -15,7 +14,7 @@ spec:
     spec:
       containers:
       - name: aci-helloworld
-        image: microsoft/aci-helloworld
+        image: mcr.microsoft.com/azuredocs/aci-helloworld
         ports:
         - containerPort: 80
       nodeSelector:
